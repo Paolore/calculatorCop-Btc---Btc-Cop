@@ -8,11 +8,11 @@ class AssetCalculator {
 
   calculateFiat(crypto: number): number {
     const fiatValue = crypto * this.cryptoTRM;
-    return Number(fiatValue.toFixed(2));
+    return Number(fiatValue);
   }
 
   calculateCrypto(fiat: number): number {
-    const cryptoValue = (1 / this.cryptoTRM) * fiat;
+    const cryptoValue = fiat / this.cryptoTRM ;
     return Number(cryptoValue.toFixed(this.decimals));
   }
 }
